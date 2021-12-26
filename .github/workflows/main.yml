@@ -39,5 +39,5 @@ jobs:
         uses: docker/bake-action@master
         with:
           set:
-            *.tags=["ghcr.io/samuelbagattin/morpio:${{ env.SEMVER }}"]
+            morpio.tags=['ghcr.io/samuelbagattin/morpio:${{ env.SEMVER }}']
           push: true
