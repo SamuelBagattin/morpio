@@ -35,21 +35,9 @@ jobs:
         name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
 
-      -
-        name: Docker meta
-        id: meta
-        uses: docker/metadata-action@v3
-        with:
-          # list of Docker images to use as base name for tags
-          images: |
-            ghcr.io/${{ secrets.GHCR_USER }}/samuelbagattin
-          # generate Docker tags based on the following events/attributes
-          tags: |
-            type=semver,pattern=${{ env.SEMVER }}
-            type=sha
       - name: Build and push
         uses: docker/bake-action@master
         with:
-          tags: |
-            type=semver,pattern={{version}},value=${{ env.SEMVER }}
+          set:
+            *.tags=["ghcr.io/samuelbagattin/morpio:${{ env.SEMVER }}"]
           push: true
