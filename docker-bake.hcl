@@ -6,4 +6,5 @@ target "morpio" {
     dockerfile = "Dockerfile"
     tags = ["ghcr.io/samuelbagattin/morpio"]
     platforms = ["linux/arm64", "linux/amd64"]
+    args = ["STATIC_DIR=./dist/morpio"]
 }
