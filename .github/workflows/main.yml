@@ -57,5 +57,5 @@ jobs:
         uses: docker/bake-action@master
         with:
           set:
-            morpio.tags=ghcr.io/samuelbagattin/morpio:${{ env.SEMVER }},ghcr.io/samuelbagattin/morpio:latest,ghcr.io/samuelbagattin/morpio:stable
+            morpio.tags=ghcr.io/samuelbagattin/morpio:${{ env.SEMVER }}
           push: true
